@@ -92,6 +92,7 @@ app.get("/todos/", async (request, response) => {
       } else {
         response.status(400);
         response.send("Invalid Todo Status");
+        return;
       }
       break;
 
@@ -107,6 +108,7 @@ app.get("/todos/", async (request, response) => {
       } else {
         response.status(400);
         response.send("Invalid Todo Priority");
+        return;
       }
       break;
 
@@ -128,10 +130,12 @@ app.get("/todos/", async (request, response) => {
         } else {
           response.status(400);
           response.send("Invalid Todo Status");
+          return;
         }
       } else {
         response.status(400);
         response.send("Invalid Todo Priority");
+        return;
       }
       break;
 
@@ -166,10 +170,12 @@ app.get("/todos/", async (request, response) => {
         } else {
           response.status(400);
           response.send("Invalid Todo Status");
+          return;
         }
       } else {
         response.status(400);
         response.send("Invalid Todo Category");
+        return;
       }
       break;
 
@@ -189,6 +195,7 @@ app.get("/todos/", async (request, response) => {
       } else {
         response.status(400);
         response.send("Invalid Todo Category");
+        return;
       }
       break;
 
@@ -213,10 +220,12 @@ app.get("/todos/", async (request, response) => {
         } else {
           response.status(400);
           response.send("Invalid Todo Priority");
+          return;
         }
       } else {
         response.status(400);
         response.send("Invalid Todo Category");
+        return;
       }
       break;
 
@@ -254,6 +263,7 @@ app.get("/agenda/", async (request, response) => {
   } else {
     response.status(400);
     response.send("Invalid Due Date");
+    return;
   }
 });
 
@@ -277,18 +287,22 @@ app.post("/todos/", async (request, response) => {
         } else {
           response.status(400);
           response.send("Invalid Due Date");
+          return;
         }
       } else {
         response.status(400);
         response.send("Invalid Todo Category");
+        return;
       }
     } else {
       response.status(400);
       response.send("Invalid Todo Status");
+      return;
     }
   } else {
     response.status(400);
     response.send("Invalid Todo Priority");
+    return;
   }
 });
 
@@ -326,6 +340,7 @@ app.put("/todos/:todoId/", async (request, response) => {
       } else {
         response.status(400);
         response.send("Invalid Todo Status");
+        return;
       }
       break;
 
@@ -345,6 +360,7 @@ app.put("/todos/:todoId/", async (request, response) => {
       } else {
         response.status(400);
         response.send("Invalid Todo Priority");
+        return;
       }
       break;
 
@@ -383,6 +399,7 @@ app.put("/todos/:todoId/", async (request, response) => {
       } else {
         response.status(400);
         response.send("Invalid Todo Category");
+        return;
       }
       break;
 
@@ -403,6 +420,7 @@ app.put("/todos/:todoId/", async (request, response) => {
       } else {
         response.status(400);
         response.send("Invalid Due Date");
+        return;
       }
       break;
   }
